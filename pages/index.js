@@ -10,6 +10,7 @@ import Testimonials from "../components/Testimonials"
 import Contact from "../components/Contact"
 import Footer from "../components/Footer"
 
+
 export default function Home() {
   return (
     <>
@@ -22,7 +23,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-slate-50 dark:bg-slate-900 min-h-screen">
+      <div className="bg-slate-50 dark:bg-slate-900 min-h-screen w-full overflow-x-hidden">
         <Navbar />
         <main>
           <Hero />

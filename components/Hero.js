@@ -24,7 +24,7 @@ export default function Hero() {
     }
 
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pb-7">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"></div>
 
@@ -106,19 +106,22 @@ export default function Hero() {
             </div>
 
             {/* Scroll Indicator */}
+            {/* Scroll Indicator - Corrected Version */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50 w-full pointer-events-none"
             >
-                <div className="flex flex-col items-center gap-2 text-slate-400 dark:text-slate-500">
-                    <span className="text-sm font-medium">Scroll to explore</span>
+                <div className="flex flex-col items-center gap-2">
+                    <span className="text-sm font-medium text-slate-400 dark:text-slate-500">Scroll to explore</span>
                     <div className="w-6 h-10 border-2 border-slate-300 dark:border-slate-600 rounded-full flex justify-center">
-                        <div className="w-1 h-3 bg-slate-400 dark:bg-slate-500 rounded-full mt-2 animate-bounce"></div>
+                        <div className="w-1 h-3 bg-slate-400 dark:bg-slate-500 rounded-full mt-2 animate-bounce" />
                     </div>
                 </div>
             </motion.div>
+
+
         </section>
     )
 }
