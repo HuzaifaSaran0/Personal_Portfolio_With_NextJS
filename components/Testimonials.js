@@ -138,7 +138,7 @@ export default function Testimonials() {
 
                             {/* Quote */}
                             <blockquote className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 text-center leading-relaxed mb-8 font-medium">
-                                "{testimonials[currentIndex].quote}"
+                                &quot;{testimonials[currentIndex].quote}&quot;
                             </blockquote>
 
                             {/* Rating */}
@@ -200,8 +200,8 @@ export default function Testimonials() {
                             key={index}
                             onClick={() => goToTestimonial(index)}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                                    ? "bg-blue-600 scale-125"
-                                    : "bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500"
+                                ? "bg-blue-600 scale-125"
+                                : "bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500"
                                 }`}
                         />
                     ))}
@@ -238,7 +238,7 @@ export default function Testimonials() {
                             <div className="flex gap-1 mb-3">{renderStars(testimonial.rating)}</div>
 
                             <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
-                                "{testimonial.quote.slice(0, 120)}..."
+                                &quot;{testimonial.quote.slice(0, 120)}...&quot;
                             </p>
                         </motion.div>
                     ))}

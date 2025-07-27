@@ -9,6 +9,11 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [...compat.extends("next/core-web-vitals")];
+const eslintConfig = [
+  {
+    ignores: [".next/**"], // ✅ Ignore build files
+  },
+  ...compat.extends("next/core-web-vitals"), // ✅ Your existing Next.js rules
+];
 
 export default eslintConfig;

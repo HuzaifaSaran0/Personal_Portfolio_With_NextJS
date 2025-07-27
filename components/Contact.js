@@ -154,10 +154,10 @@ export default function Contact() {
                         Get In Touch
                     </div>
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-                        Let's Work Together
+                        Let&apos;s Work Together
                     </h2>
                     <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                        Have a project in mind or want to discuss opportunities? I'd love to hear from you. Let's create something
+                        Have a project in mind or want to discuss opportunities? I&apos;d love to hear from you. Let&apos;s create something
                         amazing together!
                     </p>
                 </motion.div>
@@ -174,7 +174,7 @@ export default function Contact() {
                         <div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Contact Information</h3>
                             <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-                                Ready to start your next project? Reach out through any of these channels, and I'll get back to you as
+                                Ready to start your next project? Reach out through any of these channels, and I&apos;ll get back to you as
                                 soon as possible.
                             </p>
                         </div>
@@ -260,7 +260,7 @@ export default function Contact() {
                                 className="flex items-center gap-2 p-4 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-lg mb-6"
                             >
                                 <CheckCircle className="w-5 h-5" />
-                                <span>Message sent successfully! I'll get back to you soon.</span>
+                                <span>Message sent successfully! I&apos;ll get back to you soon.</span>
                             </motion.div>
                         )}
 
@@ -289,8 +289,8 @@ export default function Contact() {
                                         value={formData.name}
                                         onChange={handleChange}
                                         className={`w-full px-4 py-3 rounded-lg border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-800 dark:text-white ${errors.name
-                                                ? "border-red-300 dark:border-red-600"
-                                                : "border-slate-300 dark:border-slate-600 focus:border-blue-500"
+                                            ? "border-red-300 dark:border-red-600"
+                                            : "border-slate-300 dark:border-slate-600 focus:border-blue-500"
                                             }`}
                                         placeholder="Your full name"
                                     />
@@ -309,8 +309,8 @@ export default function Contact() {
                                         value={formData.email}
                                         onChange={handleChange}
                                         className={`w-full px-4 py-3 rounded-lg border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-800 dark:text-white ${errors.email
-                                                ? "border-red-300 dark:border-red-600"
-                                                : "border-slate-300 dark:border-slate-600 focus:border-blue-500"
+                                            ? "border-red-300 dark:border-red-600"
+                                            : "border-slate-300 dark:border-slate-600 focus:border-blue-500"
                                             }`}
                                         placeholder="your.email@example.com"
                                     />
@@ -330,10 +330,10 @@ export default function Contact() {
                                     value={formData.subject}
                                     onChange={handleChange}
                                     className={`w-full px-4 py-3 rounded-lg border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-800 dark:text-white ${errors.subject
-                                            ? "border-red-300 dark:border-red-600"
-                                            : "border-slate-300 dark:border-slate-600 focus:border-blue-500"
+                                        ? "border-red-300 dark:border-red-600"
+                                        : "border-slate-300 dark:border-slate-600 focus:border-blue-500"
                                         }`}
-                                    placeholder="What's this about?"
+                                    placeholder="What&apos;s this about?"
                                 />
                                 {errors.subject && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.subject}</p>}
                             </div>
@@ -350,8 +350,8 @@ export default function Contact() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     className={`w-full px-4 py-3 rounded-lg border transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-800 dark:text-white resize-none ${errors.message
-                                            ? "border-red-300 dark:border-red-600"
-                                            : "border-slate-300 dark:border-slate-600 focus:border-blue-500"
+                                        ? "border-red-300 dark:border-red-600"
+                                        : "border-slate-300 dark:border-slate-600 focus:border-blue-500"
                                         }`}
                                     placeholder="Tell me about your project or inquiry..."
                                 />

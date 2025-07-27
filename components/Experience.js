@@ -94,7 +94,7 @@ export default function Experience() {
                         Work Experience
                     </h2>
                     <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-                        My professional journey and the impact I've made across different roles and organizations
+                        My professional journey and the impact I&apos;ve made across different roles and organizations
                     </p>
                 </motion.div>
 
@@ -142,10 +142,10 @@ export default function Experience() {
                                             <div className="flex flex-col items-end gap-1">
                                                 <span
                                                     className={`px-3 py-1 rounded-full text-xs font-medium ${exp.type === "Full-time"
-                                                            ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300"
-                                                            : exp.type === "Internship"
-                                                                ? "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300"
-                                                                : "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300"
+                                                        ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300"
+                                                        : exp.type === "Internship"
+                                                            ? "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300"
+                                                            : "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300"
                                                         }`}
                                                 >
                                                     {exp.type}
@@ -220,7 +220,7 @@ export default function Experience() {
                     <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 border border-slate-200 dark:border-slate-600">
                         <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Ready to Work Together?</h3>
                         <p className="text-slate-600 dark:text-slate-300 mb-6 max-w-2xl mx-auto">
-                            I'm always open to discussing new opportunities and exciting projects. Let's create something amazing
+                            I&apos;m always open to discussing new opportunities and exciting projects. Let&apos;s create something amazing
                             together!
                         </p>
                         <a

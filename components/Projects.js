@@ -73,7 +73,7 @@ export default function Projects() {
                         Featured Projects
                     </h2>
                     <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-                        A showcase of my recent work and the technologies I'm passionate about
+                        A showcase of my recent work and the technologies I&apos;m passionate about
                     </p>
 
                     {/* Category Filter */}
@@ -83,8 +83,8 @@ export default function Projects() {
                                 key={category}
                                 onClick={() => setSelectedCategory(category)}
                                 className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${selectedCategory === category
-                                        ? "bg-blue-600 text-white shadow-lg"
-                                        : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700"
+                                    ? "bg-blue-600 text-white shadow-lg"
+                                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700"
                                     }`}
                             >
                                 {category}

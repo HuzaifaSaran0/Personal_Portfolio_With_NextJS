@@ -45,7 +45,7 @@ export default function Hero() {
 
                     {/* Main Heading */}
                     <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-                        Hi, I'm{" "}
+                        Hi, I&apos;m{" "}
                         <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
                             Huzaifa Saran
                         </span>
