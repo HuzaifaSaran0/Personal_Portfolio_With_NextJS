@@ -115,29 +115,41 @@ export default function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if (!validateForm()) {
-            return
-        }
+        if (!validateForm()) return
 
         setIsSubmitting(true)
         setSubmitStatus(null)
 
         try {
-            // Simulate API call
-            await new Promise((resolve) => setTimeout(resolve, 2000))
+            const response = await fetch("https://formspree.io/f/myzpjjkk", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                }),
+            })
 
-            setSubmitStatus("success")
-            setFormData({ name: "", email: "", subject: "", message: "" })
+            if (response.ok) {
+                setSubmitStatus("success")
+                setFormData({ name: "", email: "", subject: "", message: "" })
+            } else {
+                throw new Error("Submission failed")
+            }
 
-            // Reset success message after 5 seconds
-            setTimeout(() => setSubmitStatus(null), 5000)
+            setTimeout(() => setSubmitStatus(null), 10000)
         } catch (error) {
             setSubmitStatus("error")
-            setTimeout(() => setSubmitStatus(null), 5000)
+            setTimeout(() => setSubmitStatus(null), 10000)
         } finally {
             setIsSubmitting(false)
         }
     }
+
 
     return (
         <section id="contact" className="py-20 bg-white dark:bg-slate-800">
