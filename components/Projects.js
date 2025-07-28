@@ -8,48 +8,48 @@ import Image from "next/image"
 export default function Projects() {
     const projects = [
         {
-            title: "E-Commerce Platform",
+            title: "Saran AI Chat Application",
             description:
-                "A full-featured e-commerce platform with user authentication, payment processing, and admin dashboard. Built with modern technologies for optimal performance.",
-            image: "/placeholder.svg?height=300&width=500",
-            technologies: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
-            features: ["User Authentication", "Payment Integration", "Admin Dashboard", "Real-time Updates"],
-            github: "https://github.com",
-            live: "https://example.com",
-            category: "Full-Stack",
+                "A full-featured AI chat application with advanced natural language processing capabilities.",
+            image: "/images/chat.PNG",
+            technologies: ["Django", "DRF", "React", "PostgreSQL", "TailwindCSS", "JWT", "Vercel", "Heroku"],
+            features: ["User Authentication with GOOGLE", "Admin Dashboard", "Chat Management", "History of Previous Chats", "Real-time Updates"],
+            github: "https://github.com/HuzaifaSaran0/chatbot_frontend",
+            live: "https://chatbot-frontend-two-fawn.vercel.app/",
+            category: "Full Stack Web App",
         },
         {
-            title: "Task Management App",
+            title: "Chat with LYA (Your AI Assistant) Web App",
             description:
-                "A collaborative task management application with real-time updates, team collaboration features, and advanced project tracking capabilities.",
-            image: "/placeholder.svg?height=300&width=500",
-            technologies: ["Vue.js", "Express", "PostgreSQL", "Socket.io", "Docker"],
-            features: ["Real-time Collaboration", "Project Tracking", "Team Management", "Analytics"],
-            github: "https://github.com",
-            live: "https://example.com",
+                "A web application that allows users to chat with LYA, their AI assistant for a Limited Company.",
+            image: "/images/project2.PNG",
+            technologies: ["Django", "DRF", "PostgreSQL", "Redis", "Docker"],
+            features: ["User Authentication with GOOGLE", "Chat History", "OpenAI Models", "Real-time Updates"],
+            // github: "https://github.com",
+            live: "https://chat.lyasllv.me/",
+            category: "Full Stack Web App",
+        },
+        {
+            title: "Shopping Cart API",
+            description:
+                "A RESTful API for managing shopping cart functionality in e-commerce applications with features like product management, cart operations, and user authentication.",
+            image: "/images/project3.PNG",
+            technologies: ["Django", "DRF", "Redis", "Celery", "Requests", "MySQL", "Heroku"],
+            features: ["Product Management", "Cart Operations", "User Authentication", "Order Processing"],
+            github: "https://github.com/HuzaifaSaran0/storefront",
+            live: "https://sarancreates-prod-30226109170e.herokuapp.com/store/",
+            category: "Backend API",
+        },
+        {
+            title: "LMS (Learning Management System) with Wordpress",
+            description:
+                "A comprehensive Learning Management System built with WordPress, providing a platform for online courses, user management, and content delivery.",
+            image: "/images/project4.PNG",
+            technologies: ["Wordpress", "PHP", "HTML/CSS", "Tutor Plugin", "Elementor Theme"],
+            features: ["Course Management", "User Management", "Content Delivery", "Mobile Responsive"],
+            // github: "https://github.com",
+            live: "https://lms.sigmashoaib.com/",
             category: "Web App",
-        },
-        {
-            title: "AI Content Generator",
-            description:
-                "An AI-powered content generation tool that helps users create high-quality content using advanced machine learning algorithms and natural language processing.",
-            image: "/placeholder.svg?height=300&width=500",
-            technologies: ["Python", "FastAPI", "OpenAI", "React", "Redis"],
-            features: ["AI Content Generation", "Multiple Templates", "Export Options", "Usage Analytics"],
-            github: "https://github.com",
-            live: "https://example.com",
-            category: "AI/ML",
-        },
-        {
-            title: "Weather Dashboard",
-            description:
-                "A comprehensive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics for multiple cities worldwide.",
-            image: "/placeholder.svg?height=300&width=500",
-            technologies: ["React", "TypeScript", "Chart.js", "Weather API", "Tailwind"],
-            features: ["Location-based Forecasts", "Interactive Maps", "Weather Analytics", "Mobile Responsive"],
-            github: "https://github.com",
-            live: "https://example.com",
-            category: "Frontend",
         },
     ]
 

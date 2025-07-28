@@ -74,7 +74,7 @@ export default function Hero() {
                         </a>
 
                         <a
-                            href="/resume.pdf"
+                            href="/Huzaifa_Saran_Python_Django_Dev.pdf"
                             download
                             className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold py-4 px-8 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                         >
