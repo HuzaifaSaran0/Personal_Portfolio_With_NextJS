@@ -5,6 +5,6 @@ import { authConfig } from './auth.config';
 export default NextAuth(authConfig).auth;
 
 export const config = {
-  // Matcher ignores static files and internal Next.js paths
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  // Only run middleware on admin routes (not public pages or API routes)
+  matcher: ['/admin/:path*'],
 };

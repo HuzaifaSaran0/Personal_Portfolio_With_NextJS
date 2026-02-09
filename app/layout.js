@@ -1,17 +1,16 @@
 // app/layout.js
-import { Providers } from "@/components/Providers";
 import "../styles/globals.css"; // Double check this path matches your styles folder
 
 export const metadata = {
-  title: "Admin Portfolio CMS",
-  description: "Backend-driven portfolio management",
+  title: "Huzaifa Saran | Full-Stack Developer Portfolio",
+  description: "Portfolio of Huzaifa Saran, Full-Stack Developer specializing in scalable web applications",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        {children}
       </body>
     </html>
   );
