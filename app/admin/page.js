@@ -8,12 +8,18 @@ export default async function AdminDashboard() {
   const session = await auth();
   if (!session) redirect('/admin/login');
 
-  // 2. Fetch stats from database in parallel
-  const [projectCount, skillCount, experienceCount] = await Promise.all([
-    prisma.project.count(),
-    prisma.skill.count(),
-    prisma.experience.count(),
-  ]);
+  // 2. Fetch stats from database in parallel (handle null prisma)
+  let projectCount = 0;
+  let skillCount = 0;
+  let experienceCount = 0;
+
+  if (prisma) {
+    [projectCount, skillCount, experienceCount] = await Promise.all([
+      prisma.project.count(),
+      prisma.skill.count(),
+      prisma.experience.count(),
+    ]);
+  }
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">

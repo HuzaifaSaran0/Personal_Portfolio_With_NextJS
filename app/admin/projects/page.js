@@ -4,6 +4,15 @@ import prisma from '@/lib/prisma';
 // Ensure this is an async Server Component
 export default async function ProjectsPage() {
   try {
+    if (!prisma) {
+      return (
+        <main className="p-8">
+          <h1 className="text-2xl font-bold mb-6">My Projects</h1>
+          <p>Database not configured. Please set DATABASE_URL.</p>
+        </main>
+      );
+    }
+
     const projects = await prisma.project.findMany({
       orderBy: { sortOrder: 'asc' },
       include: { skills: { include: { skill: true } } }
