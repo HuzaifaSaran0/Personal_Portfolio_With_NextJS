@@ -1,14 +1,13 @@
 "use client"
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
-import Image from "next/image"
 import { Star, Quote, ChevronLeft, ChevronRight, Users } from "lucide-react"
 
 const testimonials = [
     {
         name: "Ayesha Khan",
         title: "Software Engineer at TechVerse",
-        image: "/placeholder.svg?height=80&width=80",
+        initials: "AK",
         quote:
             "Huzaifa is a talented developer who delivers on time with clean code. His attention to detail and positive attitude make him a joy to work with. The project exceeded our expectations!",
         rating: 5,
@@ -18,7 +17,7 @@ const testimonials = [
     {
         name: "Ali Raza",
         title: "Freelance Client",
-        image: "/placeholder.svg?height=80&width=80",
+        initials: "AR",
         quote:
             "Extremely satisfied with Huzaifa's work! He built my custom backend API and integrated it smoothly with my React app. Communication was excellent throughout the project.",
         rating: 5,
@@ -28,7 +27,7 @@ const testimonials = [
     {
         name: "Fatima Noor",
         title: "CS Student Peer",
-        image: "/placeholder.svg?height=80&width=80",
+        initials: "FN",
         quote:
             "Huzaifa helped me understand Django Rest Framework like no one else. He's a great team player and mentor. His explanations are clear and easy to follow.",
         rating: 5,
@@ -38,7 +37,7 @@ const testimonials = [
     {
         name: "Ahmed Hassan",
         title: "Startup Founder",
-        image: "/placeholder.svg?height=80&width=80",
+        initials: "AH",
         quote:
             "Working with Huzaifa was a game-changer for our startup. He delivered a scalable solution that helped us launch successfully. Highly recommend his services!",
         rating: 5,
@@ -48,7 +47,7 @@ const testimonials = [
     {
         name: "Sarah Ahmed",
         title: "Product Manager at InnovateTech",
-        image: "/placeholder.svg?height=80&width=80",
+        initials: "SA",
         quote:
             "Huzaifa's technical expertise and problem-solving skills are outstanding. He consistently delivers high-quality work and is always willing to go the extra mile.",
         rating: 5,
@@ -56,6 +55,23 @@ const testimonials = [
         relationship: "Colleague",
     },
 ]
+
+const avatarColors = [
+    "bg-blue-500",
+    "bg-purple-500",
+    "bg-green-500",
+    "bg-orange-500",
+    "bg-pink-500",
+]
+
+function Avatar({ initials, size = "lg", index = 0 }) {
+    const sizeClasses = size === "lg" ? "w-20 h-20 text-xl" : "w-12 h-12 text-sm"
+    return (
+        <div className={`${sizeClasses} ${avatarColors[index % avatarColors.length]} rounded-full flex items-center justify-center text-white font-bold shadow-lg`}>
+            {initials}
+        </div>
+    )
+}
 
 export default function Testimonials() {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -149,13 +165,7 @@ export default function Testimonials() {
                             {/* Author Info */}
                             <div className="flex flex-col md:flex-row items-center justify-center gap-4">
                                 <div className="relative">
-                                    <Image
-                                        src={testimonials[currentIndex].image || "/placeholder.svg"}
-                                        alt={testimonials[currentIndex].name}
-                                        width={80}
-                                        height={80}
-                                        className="rounded-full border-4 border-white dark:border-slate-700 shadow-lg"
-                                    />
+                                    <Avatar initials={testimonials[currentIndex].initials} size="lg" index={currentIndex} />
                                     <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-2 border-white dark:border-slate-800"></div>
                                 </div>
 
@@ -222,13 +232,7 @@ export default function Testimonials() {
                             className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700"
                         >
                             <div className="flex items-center gap-3 mb-4">
-                                <Image
-                                    src={testimonial.image || "/placeholder.svg"}
-                                    alt={testimonial.name}
-                                    width={50}
-                                    height={50}
-                                    className="rounded-full"
-                                />
+                                <Avatar initials={testimonial.initials} size="sm" index={index} />
                                 <div>
                                     <h4 className="font-semibold text-slate-900 dark:text-white">{testimonial.name}</h4>
                                     <p className="text-sm text-slate-600 dark:text-slate-300">{testimonial.title}</p>

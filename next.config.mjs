@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  /* This is the critical fix for Prisma 7 + Next.js 16 */
+  serverExternalPackages: ['@prisma/client', 'pg'],
 };
 
 export default nextConfig;

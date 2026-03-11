@@ -1,0 +1,99 @@
+// prisma/schema.prisma
+
+generator client {
+  provider      = "prisma-client"
+  output   = "./generated"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+  engineType = "library"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Admin Authentication ────────────────────────────────────────────
+
+model AdminUser {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@map("admin_users")
+}
+
+// ─── Portfolio Content Models ────────────────────────────────────────
+
+model Project {
+  id              String   @id @default(cuid())
+  title           String
+  slug            String   @unique
+  description     String
+  longDescription String?  @map("long_description")
+  imageUrl        String?  @map("image_url")
+  liveUrl         String?  @map("live_url")
+  repoUrl         String?  @map("repo_url")
+  tags            String[] @default([])
+  featured        Boolean  @default(false)
+  sortOrder       Int      @default(0) @map("sort_order")
+  published       Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  skills ProjectSkill[]
+
+  @@index([published, featured])
+  @@index([sortOrder])
+  @@map("projects")
+}
+
+model Skill {
+  id        String   @id @default(cuid())
+  name      String
+  category  String
+  icon      String?
+  level     Int      @default(0)
+  sortOrder Int      @default(0) @map("sort_order")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  projects ProjectSkill[]
+
+  @@index([category])
+  @@index([sortOrder])
+  @@map("skills")
+}
+
+model Experience {
+  id          String    @id @default(cuid())
+  company     String
+  role        String
+  slug        String    @unique
+  description String?
+  startDate   DateTime  @map("start_date")
+  endDate     DateTime? @map("end_date")
+  current     Boolean   @default(false)
+  sortOrder   Int       @default(0) @map("sort_order")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([sortOrder])
+  @@index([current])
+  @@map("experiences")
+}
+
+// ─── Join Tables ─────────────────────────────────────────────────────
+
+model ProjectSkill {
+  projectId String  @map("project_id")
+  skillId   String  @map("skill_id")
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  skill     Skill   @relation(fields: [skillId], references: [id], onDelete: Cascade)
+
+  @@id([projectId, skillId])
+  @@index([skillId])
+  @@map("project_skills")
+}
